@@ -1,36 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-const Result = ({num,secretNum}) => {
+function Result({ secretNum, num }) {
+  let result = '';
 
-    
-    let result;
-    if(num){
-        if(num<secretNum){
-            result='Lower'
-        }
-        else if(num>secretNum){
-            result='Higher'
-        }
-        else if(num===secretNum){
-            result='Congrats your guess is correct'
-        }
-        else{
-            result='enter valid number'
-        }
+  if (num !== '') {
+    const guessedNum = parseInt(num, 10);
+
+    if (isNaN(guessedNum)) {
+      result = 'Enter a valid number';
+    } else if (guessedNum > secretNum) {
+      result = 'Lower';
+    } else if (guessedNum < secretNum) {
+      result = 'Higher';
+    } else if (guessedNum === secretNum) {
+      result = 'Congrats, your guess is correct';
     }
+  }
 
-    
-
-    
-  return (
-    <>
-      <div>
-        <p>Your guess is: {result}</p>
-        <button >Submit</button>
-      </div>
-     
-    </>
-  )
+  return <h3>You Guessed: {result}</h3>;
 }
 
-export default Result
+export default Result;

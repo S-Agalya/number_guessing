@@ -17,7 +17,7 @@ function App() {
     <div className='App'>
       <div className='container'>
             <div className='head'>
-              <label>Guess the number between 1 to 10 
+              <label>Guess the number between 1 to 10 (answer:{secretNum})
 <br/><br/>
                   <input style={{padding:'10px', width:"400px", textAlign:'center'}}type='text' name='term' 
                   placeholder='enter your guessed number here!!' onChange={handleChange}/>
